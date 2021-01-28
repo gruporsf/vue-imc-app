@@ -17,7 +17,7 @@
     </span>
   </div>
 
-  <div class="div-imc">
+  <div class="div-imc" v-if="!imc">
     <p>
       <Button label="Calcular" @click="calculate()" class="p-button-success" style="margin-right:10px;" />
       <Button label="Limpar" @click="clear()" />
@@ -27,6 +27,7 @@
   <div v-if="imc">
     <p class="label-result">Seu IMC é: {{ imc }}</p>
     <p class="label-classification">A classificação do seu IMC é: {{ classification }}</p>
+    <p><Button label="Calcular Novamente" @click="clear()" /></p>
   </div>
 </template>
 
